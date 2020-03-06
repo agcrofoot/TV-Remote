@@ -12,7 +12,7 @@ namespace OOP_Lab
         {
             //Variable to accept user input
             int station;
-
+            /*
             //Declare and instatiate a television object
             Television bigScreen = new Television("Toshiba", 55);
 
@@ -48,8 +48,33 @@ namespace OOP_Lab
 
             //create blank line
             Console.WriteLine();
+            */
 
             //HERE IS WHERE YOU DO TASK 5
+            //Declares and instantiates new television portable 
+            Television portable = new Television("Sharp", 19);
+
+            //Turns portable on
+            portable.Power();
+
+            //Gives state of portable
+            Console.WriteLine(portable.ToString());
+
+            //Prompts user to enter desired channel
+            Console.WriteLine("What channel do you want? ");
+            station = int.Parse(Console.ReadLine());
+
+            //Changes volume on portable
+            portable.SetChannel(station);
+
+            //Decreases portable's volume by two
+            for(int x = 0; x < 2; x++)
+            {
+                portable.DecreaseVolume();
+            }
+
+            //Gives the channel and volume of portable
+            Console.WriteLine("Channel: " + portable.GetChannel() + " Volume: " + portable.GetVolume());
 
             Console.ReadKey();
         }
